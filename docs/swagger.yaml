@@ -1,0 +1,51 @@
+host: golang-vercel.vercel.app
+info:
+  contact: {}
+  description: API Documentation for Golang deployment in vercel serverless environment
+  title: Golang Vercel Deployment
+  version: "1.0"
+paths:
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Endpoint to user login and generate authentication token
+      parameters:
+      - description: 'username must be email. ex: rdhawladar@gmail.com '
+        in: body
+        name: username
+        required: true
+        schema:
+          type: object
+      - description: 'Password must be 6 digits ex: 123456'
+        in: body
+        name: password
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            type: object
+        "400":
+          description: Request Error or parameter missing
+          schema:
+            type: object
+        "404":
+          description: When user not found
+          schema:
+            type: object
+        "500":
+          description: Server Error
+          schema:
+            type: object
+      summary: User Login
+      tags:
+      - Login
+schemes:
+- https
+- http
+swagger: "2.0"

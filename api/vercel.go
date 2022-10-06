@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"golang-vercel/app/routes"
-	_ "golang-vercel/docs"
 
 	"github.com/gin-gonic/gin"
 )

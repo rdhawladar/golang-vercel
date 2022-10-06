@@ -1,0 +1,77 @@
+{
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "API Documentation for Golang deployment in vercel serverless environment",
+        "title": "Golang Vercel Deployment",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "golang-vercel.vercel.app",
+    "paths": {
+        "/auth/login": {
+            "post": {
+                "description": "Endpoint to user login and generate authentication token",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Login"
+                ],
+                "summary": "User Login",
+                "parameters": [
+                    {
+                        "description": "username must be email. ex: rdhawladar@gmail.com ",
+                        "name": "username",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    {
+                        "description": "Password must be 6 digits ex: 123456",
+                        "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "400": {
+                        "description": "Request Error or parameter missing",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "404": {
+                        "description": "When user not found",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "500": {
+                        "description": "Server Error",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
