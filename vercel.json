@@ -1,0 +1,26 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "github": {
+      "silent": true
+    },
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/api",
+        "permanent": false
+      },
+      {
+        "source": "/api",
+        "destination": "/api/ping",
+        "permanent": false
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/api/vercel.go"
+      }
+    ]
+  }
+  
