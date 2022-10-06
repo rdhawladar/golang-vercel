@@ -3,8 +3,8 @@ package api
 import (
 	"net/http"
 
-	"WerkenServer/app/routes"
-	_ "WerkenServer/docs"
+	"golang-vercel/app/routes"
+	_ "golang-vercel/docs"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,6 +13,12 @@ var (
 	app *gin.Engine
 )
 
+// @title Golang Vercel Deployment
+// @description API Documentation for Golang deployment in vercel serverless environment
+// @version 1.0
+
+// @schemes https http
+// @host golang-vercel.vercel.app
 func init() {
 	app = gin.New()
 	routes.Register(app)
