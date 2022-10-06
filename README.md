@@ -1,7 +1,8 @@
 # golang-vercel
- Golang basic template and deployment with vercel 
+ Golang basic template and deployment with vercel serverless environment. 
 
-[![Actions Status](https://github.com/teachmind/Auth-service/workflows/build/badge.svg)](https://github.com/teachmind/Auth-service/actions)
+ **What Is Vercel:**
+ ​Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with workflow. It enables developers to host websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
 
 ## Features 
 -   Server Preparation for Running the project on localhost
@@ -20,9 +21,13 @@
 
 ## Tools and Technology
 -   Golang
--   PostgreSQL
+-   Vercel
+-   Node, NPM
 
 ## Installation
--   **Step-1:** Copy/rename `.env.example` file as `.env`. Change the `APP_PORT`, `DB_PORT`, `DB_NAME`,`DB_HOST`, `DB_USER`, `DB_PASSWORD` value as per your DB and Project setup.
--   **Step-2:** Run migration command `go run main.go migrate` for Database migration
--   **Step-3:** To start server run `go run main.go server`
+-   Install node and npm using `brew install node`
+-   Run `npm i -g vercel` and check if vercel install properly by `vercel --version`
+-   Run `vercel dev` for development server
+-   Run `vercel --prod` for production server
+
+**Vercel Production URL**: https://golang-vercel.vercel.app/

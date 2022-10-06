@@ -21,3 +21,4 @@
 go.work
 .vercel
 **/.DS_Store
+.env
