@@ -16,9 +16,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/auth/login": {
-            "post": {
-                "description": "Endpoint to user login and generate authentication token",
+        "/hello/:name": {
+            "get": {
+                "description": "Endpoint to Welcome user and say Hello \"Name\"",
                 "consumes": [
                     "application/json"
                 ],
@@ -26,27 +26,16 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Login"
+                    "Welcome"
                 ],
-                "summary": "User Login",
+                "summary": "Hello User",
                 "parameters": [
                     {
-                        "description": "username must be email. ex: rdhawladar@gmail.com ",
-                        "name": "username",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "object"
-                        }
-                    },
-                    {
-                        "description": "Password must be 6 digits ex: 123456",
-                        "name": "password",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "object"
-                        }
+                        "type": "string",
+                        "description": "Name in the URL param",
+                        "name": "name",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {

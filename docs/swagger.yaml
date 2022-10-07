@@ -5,24 +5,17 @@ info:
   title: Golang Vercel Deployment
   version: "1.0"
 paths:
-  /auth/login:
-    post:
+  /hello/:name:
+    get:
       consumes:
       - application/json
-      description: Endpoint to user login and generate authentication token
+      description: Endpoint to Welcome user and say Hello "Name"
       parameters:
-      - description: 'username must be email. ex: rdhawladar@gmail.com '
-        in: body
-        name: username
+      - description: Name in the URL param
+        in: query
+        name: name
         required: true
-        schema:
-          type: object
-      - description: 'Password must be 6 digits ex: 123456'
-        in: body
-        name: password
-        required: true
-        schema:
-          type: object
+        type: string
       produces:
       - application/json
       responses:
@@ -42,9 +35,9 @@ paths:
           description: Server Error
           schema:
             type: object
-      summary: User Login
+      summary: Hello User
       tags:
-      - Login
+      - Welcome
 schemes:
 - https
 - http
