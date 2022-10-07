@@ -1,8 +1,7 @@
 # golang-vercel
  Golang basic template and deployment with vercel serverless environment. 
 
- *What Is Vercel:*
- ​Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with workflow. It enables developers to host websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
+ **What Is Vercel:** ​Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with workflow. It enables developers to host websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
 
 ## Features 
 -   Server Preparation for Running the project on localhost
