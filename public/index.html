@@ -7,19 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golang prject structure</title>
     <style>
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             flex-direction: column;
+            margin: 20px;
+            height: 100%;
+            overflow: hidden;
         }
 
         div {
             background: aliceblue;
+            width: 540px;
             padding: 30px;
-            margin-top: 30px;
-            width: 500px;
+        }
+
+        div:first-child {
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -33,7 +46,6 @@
         a {
             background: #89b2bda9;
             padding: 20px;
-            margin-top: 20px;
             display: block;
             text-decoration: none;
             font-size: 20px;
@@ -45,8 +57,22 @@
             color: black;
         }
 
+        p {
+            padding: 0 10px;
+        }
+
         b {
             color: #5f6368
+        }
+
+        @media only screen and (max-width: 991px) {
+            div {
+                width: 100%;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -59,8 +85,8 @@
     <div>
         <p><b>CLICK TO PLAY</b></p>
         <p><a href="/ping">Ping Pong</a></p>
-        <p><a href="/hello/rdhawladar">Hello Clap</a></p>
-        <p><a href="/doc/index.html">Swagger File</a></p>
+        <p><a href="/api/hello/rdhawladar">Hello Clap</a></p>
+        <p><a href="/api/doc/index.html">Swagger File</a></p>
     </div>
 
 </body>
