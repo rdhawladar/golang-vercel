@@ -4,7 +4,7 @@
  **What Is [Vercel]:** ​Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with workflow. It enables developers to host websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
 
 ## Features 
--   Golang template to start new prject
+-   Golang template to start new project
 -   Deploy in a serverless platform and share in one second
 -   Implementation of Swagger document 
 -   Example of Gin Gonic Framework
