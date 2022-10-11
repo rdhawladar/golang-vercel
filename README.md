@@ -35,7 +35,7 @@
 [Vercel]: <https://vercel.com/>
 [Project Link]: <https://golang-vercel.vercel.app/>
 [Golang]: <https://go.dev/>
-[Gin Gonic]: <[link](https://gin-gonic.com/)>
+[Gin Gonic]: <https://gin-gonic.com/>
 [Swagger 2.0]: <https://swagger.io/specification/v2/>
 [Node]: <https://nodejs.org/en/>
 [NPM]: <https://www.npmjs.com/>
