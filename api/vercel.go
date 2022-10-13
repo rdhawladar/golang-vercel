@@ -23,9 +23,17 @@ var (
 // @host golang-vercel.vercel.app
 func init() {
 	app = gin.New()
-	app.GET("/doc/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	app.GET("/doc/*any", FixRequestUri)
 	app.GET("/ping", Ping)
 	app.GET("/hello/:name", Hello)
+}
+
+func FixRequestUri(c *gin.Context) {
+	if c.Request.RequestURI == "" {
+		c.Request.RequestURI = c.Request.URL.Path
+	}
+
+	ginSwagger.WrapHandler(swaggerFiles.Handler)(c)
 }
 
 // Entrypoint
