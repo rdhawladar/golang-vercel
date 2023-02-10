@@ -3,12 +3,9 @@ package api
 import (
 	"net/http"
 
+	"golang-vercel/app/routes"
+
 	"github.com/gin-gonic/gin"
-
-	_ "golang-vercel/docs"
-
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 var (
@@ -23,31 +20,10 @@ var (
 // @host golang-vercel.vercel.app
 func init() {
 	app = gin.New()
-	app.GET("/doc/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	app.GET("/ping", Ping)
-	app.GET("/hello/:name", Hello)
+	routes.Register(app)
 }
 
 // Entrypoint
 func Handler(w http.ResponseWriter, r *http.Request) {
 	app.ServeHTTP(w, r)
-}
-
-func Ping(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"ping": "pong"})
-}
-
-// @Tags        Welcome
-// @Summary     Hello User
-// @Description Endpoint to Welcome user and say Hello "Name"
-// @Param       name query string true "Name in the URL param"
-// @Accept      json
-// @Produce     json
-// @Success     200 {object} object "success"
-// @Failure     400 {object} object "Request Error or parameter missing"
-// @Failure     404 {object} object "When user not found"
-// @Failure     500 {object} object "Server Error"
-// @Router      /hello/:name [GET]
-func Hello(c *gin.Context) {
-	c.String(http.StatusOK, "Hello %v", c.Param("name"))
 }
